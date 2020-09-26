@@ -1,14 +1,17 @@
-"""Own implementation of a 2D vector class.
-"""
+"""Own implementation of a 2D vector class."""
 import numbers
-from math import sqrt
 from functools import total_ordering
+from math import sqrt
 
 
 @total_ordering
 class Vector2D:
+<<<<<<< HEAD
     """Vector2D class to perform simple vector operations.
     """
+=======
+    """Vector2D class to perform simple vector operations."""
+>>>>>>> 03aff69d3252a5d87b36883534d90b42723f64b3
 
     def __init__(self, x=0, y=0):
         """Creates a vector instance with the given x and y values.
@@ -43,7 +46,11 @@ class Vector2D:
         return self.__repr__()
 
     def __repr__(self):
+<<<<<<< HEAD
         """The vector instance representation.
+=======
+        """Returns the vector instance representation.
+>>>>>>> 03aff69d3252a5d87b36883534d90b42723f64b3
 
         Returns
         -------
@@ -53,7 +60,11 @@ class Vector2D:
         return 'vector.Vector2D({}, {})'.format(self.x, self.y)
 
     def __str__(self):
+<<<<<<< HEAD
         """The vector instance as a string.
+=======
+        """Returns the vector instance as a string.
+>>>>>>> 03aff69d3252a5d87b36883534d90b42723f64b3
 
         Returns
         -------
@@ -74,7 +85,11 @@ class Vector2D:
         return bool(abs(self))
 
     def __abs__(self):
+<<<<<<< HEAD
         """Returns the length (magnitude) of the vector instance
+=======
+        """Returns the length (magnitude) of the vector instance.
+>>>>>>> 03aff69d3252a5d87b36883534d90b42723f64b3
 
         Returns
         -------
@@ -141,7 +156,11 @@ class Vector2D:
         return is_less_than
 
     def __add__(self, other_vector):
+<<<<<<< HEAD
         """Returns the additon vector of the self and the other vector instance.
+=======
+        """Return the additon vector of the self and the other vector instance.
+>>>>>>> 03aff69d3252a5d87b36883534d90b42723f64b3
 
         Parameters
         ----------

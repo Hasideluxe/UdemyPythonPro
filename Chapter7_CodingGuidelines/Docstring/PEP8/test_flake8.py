@@ -1,16 +1,24 @@
+<<<<<<< HEAD:Chapter7_CodingGuidelines/Docstring/PEP8/test_flake8.py
     """Own implementation...
     """
 
 # flake8 test_flake8.py --statistics
 # Also flake8 can be enabled in VS Code
+=======
+>>>>>>> 03aff69d3252a5d87b36883534d90b42723f64b3:Chapter7_CodingGuidelines/PEP8/test_flake8.py
 import numbers
-from math import sqrt
 from functools import total_ordering
+from math import sqrt
+
+
+A = 10
+
 
 
 @total_ordering
 class Vector2D:
     def __init__(self, x=0, y=0):
+<<<<<<< HEAD:Chapter7_CodingGuidelines/Docstring/PEP8/test_flake8.py
         """Create a vector with the given x and y values
 
         Parameters
@@ -25,6 +33,8 @@ class Vector2D:
         TypeError
             If x of y is not a number
         """
+=======
+>>>>>>> 03aff69d3252a5d87b36883534d90b42723f64b3:Chapter7_CodingGuidelines/PEP8/test_flake8.py
         if isinstance(x, numbers.Real) and isinstance(y, numbers.Real):
             self.x = x
             self.y = y
@@ -54,17 +64,17 @@ class Vector2D:
 
     def __eq__(self, other_vector):
         self.check_vector_types(other_vector)
+        is_equal = False
         if self.x == other_vector.x and self.y == other_vector.y:
-            return True
-        else:
-            return False
+            is_equal = True
+        return is_equal
 
     def __lt__(self, other_vector):
         self.check_vector_types(other_vector)
+        is_less_than = False
         if abs(self) < abs(other_vector):
-            return True
-        else:
-            return False
+            is_less_than = True
+        return is_less_than
 
     def __add__(self, other_vector):
         self.check_vector_types(other_vector)
@@ -72,19 +82,17 @@ class Vector2D:
         y = self.y + other_vector.y
         return Vector2D(x, y)
 
+<<<<<<< HEAD:Chapter7_CodingGuidelines/Docstring/PEP8/test_flake8.py
     # try (== 1):
     # except (>= 1):
     # finally (optional):
+=======
+>>>>>>> 03aff69d3252a5d87b36883534d90b42723f64b3:Chapter7_CodingGuidelines/PEP8/test_flake8.py
     def __sub__(self, other_vector):
-        try:
-            x = self.x - other_vector.x
-            y = self.y - other_vector.y
-            return Vector2D(x, y)
-        except AttributeError as e:
-            print("AttributeError: {} was raised!".format(e))
-            return self
-        except Exception as e:
-            print("Exception {}: {} was raised!".format(type(e), e))
+        self.check_vector_types(other_vector)
+        x = self.x - other_vector.x
+        y = self.y - other_vector.y
+        return Vector2D(x, y)
 
     def __mul__(self, other):
         if isinstance(other, Vector2D):

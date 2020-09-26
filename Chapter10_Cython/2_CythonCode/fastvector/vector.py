@@ -4,27 +4,32 @@ from __future__ import annotations
 
 import array
 import numbers
-from math import sqrt
-from typing import Union, Any, List
 from functools import total_ordering
+from math import sqrt
+from typing import Any
+from typing import List
+from typing import Union
 
-from .dtypes import float64, Number, Values
+from .dtypes import Number
+from .dtypes import Values
+from .dtypes import float64
 
-@total_ordering 
+
+@total_ordering
 class VectorND:
     """VectorND class to perform simple vector operations.
     """
 
     def __init__(self, *args, dtype=float64):
         """Creates a vector instance with the given x and y values.
-        
+
         Parameters
         ----------
         args : tuple
             The vector values.
         dtype : str
             The dtype of the underlying array.
-        
+
         Raises
         ------
         TypeError
@@ -42,7 +47,7 @@ class VectorND:
 
     def __call__(self) -> str:
         """Callable for the vector instance to return its representation.
-        
+
         Returns
         -------
         str
@@ -53,7 +58,7 @@ class VectorND:
 
     def __repr__(self) -> str:
         """The vector instance representation.
-        
+
         Returns
         -------
         str
@@ -63,7 +68,7 @@ class VectorND:
 
     def __str__(self) -> str:
         """The vector instance as a string.
-        
+
         Returns
         -------
         str
@@ -73,7 +78,7 @@ class VectorND:
 
     def __len__(self) -> int:
         """Returns the length of the ND vector
-        
+
         Returns
         -------
         int
@@ -117,7 +122,7 @@ class VectorND:
 
     def __bool__(self) -> bool:
         """Returns the truth value of the vector instance.
-        
+
         Returns
         -------
         bool
@@ -128,7 +133,7 @@ class VectorND:
 
     def __abs__(self) -> float:
         """Returns the length (magnitude) of the vector instance
-        
+
         Returns
         -------
         float
@@ -139,12 +144,12 @@ class VectorND:
 
     def __eq__(self, other_vector: Any) -> bool:
         """Check if the vector instances have the same values.
-        
+
         Parameters
         ----------
         other_vector : VectorND
             Other vector instance (right-hand-side of the operator)
-        
+
         Returns
         -------
         bool
@@ -159,12 +164,12 @@ class VectorND:
 
     def __lt__(self, other_vector: VectorND) -> bool:
         """Check if the self instance is less than the other vector instance.
-        
+
         Parameters
         ----------
         other_vector : VectorND
             Other vector instance (right-hand-side of the operator)
-        
+
         Returns
         -------
         bool
@@ -179,12 +184,12 @@ class VectorND:
 
     def __add__(self, other_vector: VectorND) -> VectorND:
         """Returns the additon vector of the self and the other vector instance.
-        
+
         Parameters
         ----------
         other_vector : VectorND
             Other vector instance (right-hand-side of the operator)
-        
+
         Returns
         -------
         VectorND
@@ -196,12 +201,12 @@ class VectorND:
 
     def __sub__(self, other_vector: VectorND) -> VectorND:
         """Returns the subtraction vector of the self and the other vector instance.
-        
+
         Parameters
         ----------
         other_vector : VectorND
             Other vector instance (right-hand-side of the operator)
-        
+
         Returns
         -------
         VectorND
@@ -213,12 +218,12 @@ class VectorND:
 
     def __mul__(self, other: Union[VectorND, Number]) -> Union[VectorND, Number]:
         """Returns the multiplication of the self vector and the other vector(or number) instance.
-        
+
         Parameters
         ----------
         other : VectorND or number
             Other vector instance or scaler value (right-hand-side of the operator)
-        
+
         Returns
         -------
         VectorND
@@ -235,12 +240,12 @@ class VectorND:
 
     def __truediv__(self, other: Number) -> VectorND:
         """Returns the multiplication of the self vector and the other vector(or number) instance.
-        
+
         Parameters
         ----------
         other : VectorND or number
             Other vector instance or scaler value (right-hand-side of the operator)
-        
+
         Returns
         -------
         VectorND
@@ -263,12 +268,12 @@ class VectorND:
     @staticmethod
     def check_vector_types(vector: VectorND):
         """Checks if the vector is an instance of the VectorND class.
-        
+
         Parameters
         ----------
         vector : VectorND
             A vector instance.
-        
+
         Raises
         ------
         TypeError

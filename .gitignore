@@ -1,3 +1,12 @@
+.vscode/
+**/.vscode/
+**/**/.vscode/
+slides/
+.benchmarks/
+
+*.png
+*.log
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

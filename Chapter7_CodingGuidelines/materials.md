@@ -8,7 +8,7 @@ Comments: https://www.python.org/dev/peps/pep-0008/#comments
 Naming Convention: https://www.python.org/dev/peps/pep-0008/#naming-conventions
 Programming Recommendations: https://www.python.org/dev/peps/pep-0008/#id51
 
-#### Docstrings: 
+#### Docstrings:
 VS Code Extension: Autodocstring
 PEP 257: https://www.python.org/dev/peps/pep-0257/
 Google vs. NumPy: https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html#example-numpy

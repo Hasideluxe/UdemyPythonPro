@@ -1,0 +1,8 @@
+# Linting
+pylint>=2.6.0
+flake8>=3.8.3
+mypy>=0.782
+isort>=5.4.2
+black>=20.8b0
+autopep8>=1.5.4
+pre-commit>=2.6.0

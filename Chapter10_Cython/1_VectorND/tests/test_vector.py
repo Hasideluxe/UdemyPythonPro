@@ -4,6 +4,7 @@ import unittest
 
 import fastvector
 
+
 class VectorTests(unittest.TestCase):
     def setUp(self):
         self.v1 = fastvector.VectorND(0, 0)
@@ -47,6 +48,7 @@ class VectorTests(unittest.TestCase):
         result = self.v3 / 5
         expected_result = fastvector.VectorND(0.5, -0.5)
         self.assertEqual(result, expected_result)
+
 
 if __name__ == "__main__":
     unittest.main()

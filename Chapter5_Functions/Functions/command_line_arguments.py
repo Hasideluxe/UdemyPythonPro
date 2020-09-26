@@ -1,5 +1,6 @@
 import sys
 
+
 def main():
     print(len(sys.argv))
     print(sys.argv)
@@ -13,6 +14,7 @@ def main():
         if is_number:
             arg_val = int(arg_val)
         print(arg_name, arg_val, type(arg_val))
+
 
 if __name__ == "__main__":
     main()

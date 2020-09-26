@@ -14,6 +14,16 @@ fastvector.vector module
    :special-members:
 
 
+fastvector.computations module
+------------------------------
+
+.. automodule:: fastvector.computations
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :special-members:
+
+
 Module contents
 ---------------
 

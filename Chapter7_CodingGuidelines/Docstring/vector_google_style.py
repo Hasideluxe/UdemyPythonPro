@@ -1,20 +1,22 @@
 """Own implementation of a 2D vector class.
 """
 import numbers
-from math import sqrt
 from functools import total_ordering
+from math import sqrt
 
-@total_ordering 
+
+@total_ordering
 class Vector2D:
     """Vector2D class to perform simple vector operations.
     """
+
     def __init__(self, x=0, y=0):
         """Create a vector with the given x and y values.
-        
+
         Args:
             x (number): x-Coordinate. Defaults to 0.
             y (number): y-Coordinate. Defaults to 0.
-        
+
         Raises:
             TypeError: If x or y is not a number.
         """
@@ -26,7 +28,7 @@ class Vector2D:
 
     def __call__(self):
         """Callable function for a vector instance.
-        
+
         Returns:
             str: Representation of the vector instance.
         """

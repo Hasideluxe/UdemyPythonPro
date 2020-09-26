@@ -1,6 +1,7 @@
-import time
 import logging
+import time
 from pathlib import Path
+
 
 # DEBUG: Detailed debug information
 # INFO: Things working as intended
@@ -19,6 +20,7 @@ file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
+
 def divide_integers(a: int, b: int) -> float:
     try:
         logger.debug("a={}, b={}".format(a, b))
@@ -27,9 +29,11 @@ def divide_integers(a: int, b: int) -> float:
     except Exception as e:
         logger.exception("Exception was raised: {}".format(e))
 
+
 def main():
     for _ in range(3):
         print(divide_integers(10, 2))
+
 
 if __name__ == "__main__":
     main()

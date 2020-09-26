@@ -22,11 +22,12 @@ class A:
 
 # Lists
 
+
 #       0   1  2  3  4  5
 noten = [
-            1, 1, 3, 
-            4, 2, 1
-        ]
+    1, 1, 3,
+    4, 2, 1
+]
 
 noten.append(6)
 noten.append(1)
@@ -63,12 +64,10 @@ print(my_list2_comp2)
 # Numpy
 import numpy as np
 
+
 m = np.array([1, 0, 0, 1])
 print(m.shape)
 print(m)
 m = np.reshape(m, (2, 2))
 print(m.shape)
 print(m)
-
-my_var = 2
-f(my_var)

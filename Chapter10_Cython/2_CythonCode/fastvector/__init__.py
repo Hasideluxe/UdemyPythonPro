@@ -1,3 +1,14 @@
-from .dtypes import int8, uint8, int16, uint16, int32, uint32, int64, uint64, float32, float64
+from .computations import cython_clip_vector
+from .computations import naive_cython_clip_vector
+from .computations import python_clip_vector
+from .dtypes import float32
+from .dtypes import float64
+from .dtypes import int8
+from .dtypes import int16
+from .dtypes import int32
+from .dtypes import int64
+from .dtypes import uint8
+from .dtypes import uint16
+from .dtypes import uint32
+from .dtypes import uint64
 from .vector import VectorND
-from .computations import python_clip_vector, cython_clip_vector, naive_cython_clip_vector

@@ -1,11 +1,12 @@
-# pylint test_pylint.py --output-format colorized -j 4
-# pylint --generate-rcfile > TARGET_PATH .pylintrc
-# Also pylint can be enabled in VS Code (is default)
 import numbers
-from math import sqrt
 from functools import total_ordering
+from math import sqrt
 
-@total_ordering 
+
+A = 10
+
+
+@total_ordering
 class Vector2D:
     def __init__(self, x=0, y=0):
         if isinstance(x, numbers.Real) and isinstance(y, numbers.Real):

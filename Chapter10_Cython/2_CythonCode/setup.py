@@ -1,14 +1,17 @@
 # python setup.py develop
-from setuptools import setup
 from Cython.Build import cythonize
+from setuptools import setup
+
 
 def get_readme():
     with open('README.md') as f:
         return f.read()
 
+
 def get_license():
     with open('LICENSE') as f:
         return f.read()
+
 
 CLASSIFIERS = '''\
 License :: OSI Approved
@@ -45,7 +48,7 @@ metadata = dict(
     ext_modules=cythonize("fastvector/cython_computations.pyx", language_level="3"),
     python_requires='>={}'.format(PYTHON_MIN_VERSION),
     install_requires=['numpy>={}'.format(NUMPY_MIN_VERSION),
-                      'scipy>={}'.format(SCIPY_MIN_VERSION),],
+                      'scipy>={}'.format(SCIPY_MIN_VERSION), ],
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     description=DESCRIPTION,
@@ -53,8 +56,10 @@ metadata = dict(
     license=LICENSE,
 )
 
+
 def setup_package():
     setup(**metadata)
+
 
 if __name__ == '__main__':
     setup_package()

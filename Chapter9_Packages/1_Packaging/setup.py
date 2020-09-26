@@ -2,13 +2,16 @@
 # Option 2: python setup.py bdist_wheel & pip install ./fastvector-0.1.0-py3-none-any.whl
 from setuptools import setup
 
+
 def get_readme():
     with open('README.md') as f:
         return f.read()
 
+
 def get_license():
     with open('LICENSE') as f:
         return f.read()
+
 
 CLASSIFIERS = '''\
 License :: OSI Approved
@@ -44,7 +47,7 @@ metadata = dict(
     packages=['fastvector'],
     python_requires='>={}'.format(PYTHON_MIN_VERSION),
     install_requires=['numpy>={}'.format(NUMPY_MIN_VERSION),
-                      'scipy>={}'.format(SCIPY_MIN_VERSION),],
+                      'scipy>={}'.format(SCIPY_MIN_VERSION), ],
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     description=DESCRIPTION,
@@ -52,8 +55,10 @@ metadata = dict(
     license=LICENSE,
 )
 
+
 def setup_package():
     setup(**metadata)
+
 
 if __name__ == '__main__':
     setup_package()

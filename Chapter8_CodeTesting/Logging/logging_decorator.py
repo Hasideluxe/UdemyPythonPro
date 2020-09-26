@@ -1,6 +1,7 @@
 import time
-from functools import wraps
 from datetime import datetime
+from functools import wraps
+
 
 def log(fn):
     @wraps(fn)
@@ -20,15 +21,18 @@ def log(fn):
                 fn.__name__, time, arguments, e))
     return logger
 
+
 @log
 def divide_integers(a: int, b: int) -> float:
     result = a / b
     return result
 
+
 def main():
     for _ in range(10):
         time.sleep(1.5)
         print(divide_integers(10, 0))
+
 
 if __name__ == "__main__":
     main()
