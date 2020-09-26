@@ -15,7 +15,7 @@ logger.setLevel(logging.DEBUG)
 formatter = logging.Formatter('%(asctime)s:%(levelname)s:%(funcName)s:%(message)s')
 filepath = Path(__file__).parent.joinpath('log_standard.log')
 file_handler = logging.FileHandler(filepath)
-file_handler.setLevel(logging.INFO)
+file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
@@ -29,7 +29,7 @@ def divide_integers(a: int, b: int) -> float:
 
 def main():
     for _ in range(3):
-        print(divide_integers(10, 0))
+        print(divide_integers(10, 2))
 
 if __name__ == "__main__":
     main()

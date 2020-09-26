@@ -1,13 +1,30 @@
-# pylint test_pylint.py --output-format colorized -j 4
-# pylint --generate-rcfile > TARGET_PATH .pylintrc
-# Also pylint can be enabled in VS Code (is default)
+    """Own implementation...
+    """
+
+# flake8 test_flake8.py --statistics
+# Also flake8 can be enabled in VS Code
 import numbers
 from math import sqrt
 from functools import total_ordering
 
-@total_ordering 
+
+@total_ordering
 class Vector2D:
     def __init__(self, x=0, y=0):
+        """Create a vector with the given x and y values
+
+        Parameters
+        ----------
+        x : number, optional
+            x-Coordinate, by default 0
+        y : number, optional
+            y-Coordinate, by default 0
+
+        Raises
+        ------
+        TypeError
+            If x of y is not a number
+        """
         if isinstance(x, numbers.Real) and isinstance(y, numbers.Real):
             self.x = x
             self.y = y
@@ -32,21 +49,22 @@ class Vector2D:
 
     def check_vector_types(self, vector2):
         if not isinstance(self, Vector2D) or not isinstance(vector2, Vector2D):
-            raise TypeError('You have to pass in two instances of the vector class!')
+            raise TypeError(
+                'You have to pass in two instances of the vector class!')
 
     def __eq__(self, other_vector):
         self.check_vector_types(other_vector)
-        is_equal = False
         if self.x == other_vector.x and self.y == other_vector.y:
-            is_equal = True
-        return is_equal
+            return True
+        else:
+            return False
 
     def __lt__(self, other_vector):
         self.check_vector_types(other_vector)
-        is_less_than = False
         if abs(self) < abs(other_vector):
-            is_less_than = True
-        return is_less_than
+            return True
+        else:
+            return False
 
     def __add__(self, other_vector):
         self.check_vector_types(other_vector)
@@ -54,11 +72,19 @@ class Vector2D:
         y = self.y + other_vector.y
         return Vector2D(x, y)
 
+    # try (== 1):
+    # except (>= 1):
+    # finally (optional):
     def __sub__(self, other_vector):
-        self.check_vector_types(other_vector)
-        x = self.x - other_vector.x
-        y = self.y - other_vector.y
-        return Vector2D(x, y)
+        try:
+            x = self.x - other_vector.x
+            y = self.y - other_vector.y
+            return Vector2D(x, y)
+        except AttributeError as e:
+            print("AttributeError: {} was raised!".format(e))
+            return self
+        except Exception as e:
+            print("Exception {}: {} was raised!".format(type(e), e))
 
     def __mul__(self, other):
         if isinstance(other, Vector2D):
@@ -66,7 +92,8 @@ class Vector2D:
         elif isinstance(other, numbers.Real):
             return Vector2D(self.x * other, self.y * other)
         else:
-            raise TypeError('You must pass in a vector instance or an int/float number!')
+            raise TypeError(
+                'You must pass in a vector instance or an int/float number!')
 
     def __truediv__(self, other):
         if isinstance(other, numbers.Real):

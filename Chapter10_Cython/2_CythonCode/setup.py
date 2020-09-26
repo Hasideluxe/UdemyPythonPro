@@ -42,7 +42,7 @@ metadata = dict(
     version=VERSION,
     long_description=README,
     packages=['fastvector'],
-    ext_modules=cythonize("fastvector/cython_computations.pyx", language_level = "3"),
+    ext_modules=cythonize("fastvector/cython_computations.pyx", language_level="3"),
     python_requires='>={}'.format(PYTHON_MIN_VERSION),
     install_requires=['numpy>={}'.format(NUMPY_MIN_VERSION),
                       'scipy>={}'.format(SCIPY_MIN_VERSION),],

@@ -10,6 +10,7 @@ def main():
     v3 = v1 + v2
     print(v3)
     print("Hello world")
+    print("Another world!")
 
 if __name__ == "__main__":
     main()
